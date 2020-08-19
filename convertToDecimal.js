@@ -36,7 +36,7 @@ const mappingXSystemForRomanSystem = [
     }
 ]
 
-function convertForDecimal(value) {
+function convertToDecimal(value) {
     const separator = value.split(" ");
     let result = 0
     for (let i = 0; i < separator.length - 1; i++) {
