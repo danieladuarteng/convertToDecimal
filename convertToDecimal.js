@@ -38,16 +38,15 @@ const mappingXSystemForRomanSystem = [
 
 function convertToDecimal(value) {
     const separator = value.split(" ");
-    let result = 0
-    for (let i = 0; i < separator.length - 1; i++) {
-        if (mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value
-            < mappingXSystemForRomanSystem.find(e => e.name === separator[i + 1]).value) {
-            result -= mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value;
+     let result = 0
+    for(let i = 0; i < separator.length-1; i++){
+        if(mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value < mappingXSystemForRomanSystem.find(e => e.name === separator[i+1]).value){
+           result -= mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value;
 
-        } else {
-            result += mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value;
-        }
-
-        return result + mappingXSystemForRomanSystem.find(e => e.name === separator[separator.length - 1]).value;
+        }else {
+        result += mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value;
+       }
     }
+    return result + mappingXSystemForRomanSystem.find(e => e.name === separator[separator.length-1]).value
 }
+
