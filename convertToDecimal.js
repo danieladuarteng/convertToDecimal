@@ -1,4 +1,4 @@
-const mapamento = [
+const mappingXSystemForRomanSystem = [
     {  
         name: 'kil',
         roman: 'I',
@@ -37,17 +37,17 @@ const mapamento = [
 ]
 
 
-function convertForDecimal(value, mapamento){
+function convertForDecimal(value){
     const separator = value.split(" ");
      let result = 0
     for(let i = 0; i < separator.length-1; i++){
-        if(mapamento.find(e => e.name === separator[i]).value < mapamento.find(e => e.name === separator[i+1]).value){
-           result -= mapamento.find(e => e.name === separator[i]).value;
+        if(mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value < mappingXSystemForRomanSystem.find(e => e.name === separator[i+1]).value){
+           result -= mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value;
            
         }else {
-        result += mapamento.find(e => e.name === separator[i]).value;
+        result += mappingXSystemForRomanSystem.find(e => e.name === separator[i]).value;
        }
     }
 
-    return result + mapamento.find(e => e.name === separator[separator.length-1]).value
+    return result + mappingXSystemForRomanSystem.find(e => e.name === separator[separator.length-1]).value
 }
