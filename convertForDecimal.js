@@ -43,11 +43,9 @@ function convertForDecimal(value, mapamento){
     for(let i = 0; i < separator.length-1; i++){
         if(mapamento.find(e => e.name === separator[i]).value < mapamento.find(e => e.name === separator[i+1]).value){
            result -= mapamento.find(e => e.name === separator[i]).value;
-           
-        }else {
+        } else {
         result += mapamento.find(e => e.name === separator[i]).value;
        }
     }
-
     return result + mapamento.find(e => e.name === separator[separator.length-1]).value
 }
